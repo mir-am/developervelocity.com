@@ -15,6 +15,30 @@
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
+	--bg-color: #ffffff;
+	--surface-color: rgba(255, 255, 255, 0.85);
+	--surface-shadow: 0 2px 8px rgba(15, 18, 25, 0.05);
+	--code-bg: rgb(var(--gray-light));
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+		--accent: #7aa2ff;
+		--accent-dark: #b7ccff;
+		--black: 241, 245, 255;
+		--gray: 150, 166, 194;
+		--gray-light: 32, 41, 59;
+		--gray-dark: 220, 228, 242;
+		--gray-gradient: rgba(24, 32, 48, 0.92), #0b1220;
+		--box-shadow:
+			0 2px 10px rgba(0, 0, 0, 0.35), 0 12px 30px rgba(0, 0, 0, 0.45),
+			0 18px 40px rgba(0, 0, 0, 0.35);
+		--bg-color: #0b1220;
+		--surface-color: rgba(13, 19, 32, 0.88);
+		--surface-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+		--code-bg: #182030;
+	}
 }
 @font-face {
 	font-family: "Atkinson";
@@ -35,6 +59,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
+	background-color: var(--bg-color);
 	background: linear-gradient(var(--gray-gradient)) no-repeat;
 	background-size: 100% 600px;
 	word-wrap: break-word;
@@ -82,7 +107,7 @@ a {
 	color: var(--accent);
 }
 a:hover {
-	color: var(--accent);
+	color: var(--accent-dark);
 }
 p {
 	margin-bottom: 1em;
@@ -107,12 +132,13 @@ img {
 }
 code {
 	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
+	background-color: var(--code-bg);
 	border-radius: 2px;
 }
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
+	background-color: var(--code-bg);
 }
 pre > code {
 	all: unset;
