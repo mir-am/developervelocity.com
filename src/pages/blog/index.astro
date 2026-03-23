@@ -54,7 +54,7 @@ const posts = (await getCollection('blog')).sort(
 			}
 			@media (max-width: 720px) {
 				main {
-					width: min(100%, calc(100% - 1.5rem));
+					width: calc(100% - 1.5rem);
 				}
 				ul li a {
 					padding: 0.875rem 0;
